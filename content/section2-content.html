@@ -1,0 +1,49 @@
+
+<h1 class="text-3xl font-bold mb-4">Section 2: Folder Structure & Naming Conventions</h1>
+
+<section class="mb-6">
+  <p class="mb-4 text-lg italic text-gray-700 dark:text-gray-300">
+    Before you write a single line of code, set yourself (and ChatGPT) up for success with a clean folder structure. Trust us — future you will thank you.
+  </p>
+
+  <h2 class="text-2xl font-semibold mb-2">The StackPilot Structure</h2>
+  <p class="mb-4">
+    StackPilot uses a modular structure that separates layout, content, and components. This keeps everything organized, scalable, and easy to work with — especially when working alongside ChatGPT.
+  </p>
+
+  <pre class="bg-gray-800 text-white p-4 rounded overflow-x-auto text-sm mb-4"><code>stackpilot/
+├── index.html               # The master layout
+├── content/                 # Modular content files
+│   └── index-content.html   # Section 1 (Welcome)
+├── assets/                  # Shared layout parts
+│   ├── sidebar.html
+│   ├── header.html
+│   └── footer.html
+└── .nojekyll                # Ensures GitHub Pages serves folders correctly
+</code></pre>
+
+  <div class="bg-cyan-100 border-l-4 border-cyan-500 p-4 text-sm mb-6">
+    <strong>Why this matters:</strong> ChatGPT can more reliably generate code and content when it knows exactly where things go. And it makes debugging way easier.
+  </div>
+
+  <h2 class="text-2xl font-semibold mb-2">Naming Rules</h2>
+  <p class="mb-4">
+    Use <strong>kebab-case</strong> for everything (lowercase, no spaces, hyphens instead of underscores). This helps avoid bugs on case-sensitive servers and keeps naming readable for humans and machines alike.
+  </p>
+
+  <ul class="list-disc pl-6 mb-4 text-green-700 dark:text-green-400">
+    <li><code>section2-content.html</code> — Good</li>
+    <li><code>Section2_Content.html</code> — Bad</li>
+    <li><code>MainPage.html</code> — Nope</li>
+  </ul>
+
+  <h2 class="text-2xl font-semibold mb-2">Bonus: Scaffold Prompt</h2>
+  <p class="mb-4">
+    Ask ChatGPT to scaffold this structure for you using a prompt like:
+  </p>
+  <pre class="bg-gray-100 text-sm p-4 rounded overflow-x-auto"><code>Create a folder structure for a modular website that includes:
+- index.html as the layout
+- a content/ folder with modular sections
+- an assets/ folder for sidebar, header, and footer
+</code></pre>
+</section>

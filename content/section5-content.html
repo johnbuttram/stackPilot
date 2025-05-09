@@ -1,0 +1,43 @@
+
+<h1 class="text-3xl font-bold mb-4">Section 5: Creating New Content Sections</h1>
+
+<section class="mb-6">
+  <p class="mb-4 text-lg italic text-gray-700 dark:text-gray-300">
+    Now that you know how styling works, it’s time to create your own section. This is where StackPilot truly becomes your site.
+  </p>
+
+  <h2 class="text-2xl font-semibold mb-2">Where Content Lives</h2>
+  <p class="mb-4">
+    All content sections go in the <code>/content</code> folder. Each file should be named like <code>sectionX-content.html</code> where X is the section number or name.
+  </p>
+
+  <pre class="bg-gray-800 text-white text-sm p-4 rounded mb-4"><code>content/
+├── index-content.html
+├── section2-content.html
+├── section3-content.html
+└── section5-content.html  ← you’re here!
+</code></pre>
+
+  <h2 class="text-2xl font-semibold mb-2">How It Loads</h2>
+  <p class="mb-4">
+    When the user navigates to <code>#section5</code> in the URL, JavaScript fetches <code>section5-content.html</code> and injects it into the layout's <code>&lt;main&gt;</code> tag.
+  </p>
+
+  <h2 class="text-2xl font-semibold mb-2">Writing Your Section</h2>
+  <p class="mb-4">
+    Inside your content file, don’t include full HTML. Just include what belongs inside the <code>&lt;main&gt;</code> area — headings, paragraphs, lists, etc. You can style with Tailwind (or the system you chose).
+  </p>
+
+  <pre class="bg-gray-100 text-sm p-4 rounded mb-4 overflow-x-auto"><code>&lt;h1 class="text-3xl font-bold mb-4"&gt;Section Title&lt;/h1&gt;
+&lt;p&gt;This is your custom section content. Add tips, guides, whatever you need.&lt;/p&gt;
+</code></pre>
+
+  <h2 class="text-2xl font-semibold mb-2">Testing Your Content</h2>
+  <p class="mb-4">
+    Open <code>index.html</code> in your browser and add <code>#section5</code> to the URL. If your file is named correctly and in the right place, it’ll load automatically.
+  </p>
+
+  <div class="bg-green-100 border-l-4 border-green-500 p-4 text-sm">
+    <strong>Pro Tip:</strong> You can create any number of new sections this way. Just follow the naming rules and StackPilot will handle the rest.
+  </div>
+</section>
