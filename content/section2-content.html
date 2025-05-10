@@ -1,49 +1,95 @@
-
-<h1 class="text-3xl font-bold mb-4">Section 2: Folder Structure & Naming Conventions</h1>
+<h1 class="text-3xl font-bold mb-4">Section 2: Getting Started</h1>
 
 <section class="mb-6">
   <p class="mb-4 text-lg italic text-gray-700 dark:text-gray-300">
-    Before you write a single line of code, set yourself (and ChatGPT) up for success with a clean folder structure. Trust us — future you will thank you.
+    Before you write any code, it’s important to get your tools set up. This section gives you options, guidance, and ChatGPT prompts to help tailor the workflow to your comfort level.
   </p>
 
-  <h2 class="text-2xl font-semibold mb-2">The StackPilot Structure</h2>
+  <h2 id="editor" class="text-2xl font-semibold mb-2">Choosing a Code Editor</h2>
   <p class="mb-4">
-    StackPilot uses a modular structure that separates layout, content, and components. This keeps everything organized, scalable, and easy to work with — especially when working alongside ChatGPT.
+    <strong>StackPilot Standard:</strong> We use <a href="https://code.visualstudio.com/" target="_blank" class="text-cyan-400 hover:underline">Visual Studio Code</a>.
   </p>
-
-  <pre class="bg-gray-800 text-white p-4 rounded overflow-x-auto text-sm mb-4"><code>stackpilot/
-├── index.html               # The master layout
-├── content/                 # Modular content files
-│   └── index-content.html   # Section 1 (Welcome)
-├── assets/                  # Shared layout parts
-│   ├── sidebar.html
-│   ├── header.html
-│   └── footer.html
-└── .nojekyll                # Ensures GitHub Pages serves folders correctly
-</code></pre>
-
-  <div class="bg-cyan-100 border-l-4 border-cyan-500 p-4 text-sm mb-6">
-    <strong>Why this matters:</strong> ChatGPT can more reliably generate code and content when it knows exactly where things go. And it makes debugging way easier.
-  </div>
-
-  <h2 class="text-2xl font-semibold mb-2">Naming Rules</h2>
   <p class="mb-4">
-    Use <strong>kebab-case</strong> for everything (lowercase, no spaces, hyphens instead of underscores). This helps avoid bugs on case-sensitive servers and keeps naming readable for humans and machines alike.
+    It’s free, powerful, and has great extensions like Live Server for testing and GitHub integration.
   </p>
-
-  <ul class="list-disc pl-6 mb-4 text-green-700 dark:text-green-400">
-    <li><code>section2-content.html</code> — Good</li>
-    <li><code>Section2_Content.html</code> — Bad</li>
-    <li><code>MainPage.html</code> — Nope</li>
-  </ul>
-
-  <h2 class="text-2xl font-semibold mb-2">Bonus: Scaffold Prompt</h2>
   <p class="mb-4">
-    Ask ChatGPT to scaffold this structure for you using a prompt like:
+    <strong>Other Options:</strong> Sublime Text, Atom, WebStorm
   </p>
-  <pre class="bg-gray-100 text-sm p-4 rounded overflow-x-auto"><code>Create a folder structure for a modular website that includes:
-- index.html as the layout
-- a content/ folder with modular sections
-- an assets/ folder for sidebar, header, and footer
-</code></pre>
+  <div class="stackpilot-prompt">
+  <button onclick="navigator.clipboard.writeText('Help me decide which code editor to use for web development.');" class="absolute top-2 right-2 text-xs text-yellow-300 hover:text-white border border-yellow-500 px-2 py-1 rounded">
+    Copy
+  </button>
+  <strong class="text-yellow-300">Prompt:</strong>
+  <code class="text-yellow-100">Help me decide which code editor to use for web development.</code>
+</div>
+
+  <h2 id="github" class="text-2xl font-semibold mb-2">Setting Up Git & GitHub</h2>
+  <p class="mb-4">
+    <strong>StackPilot Standard:</strong> GitHub + GitHub Desktop for version control and backups.
+  </p>
+  <p class="mb-4">
+    GitHub makes it easy to collaborate, save your work online, and deploy your site for free.
+  </p>
+  <p class="mb-4">
+    <strong>Other Options:</strong> Git CLI, GitKraken, Bitbucket
+  </p>
+  <div class="stackpilot-prompt">
+  <button onclick="navigator.clipboard.writeText('Help me set up GitHub Desktop and create a new repo for my modular website.');" class="absolute top-2 right-2 text-xs text-yellow-300 hover:text-white border border-yellow-500 px-2 py-1 rounded">
+    Copy
+  </button>
+  <strong class="text-yellow-300">Prompt:</strong>
+  <code class="text-yellow-100">Help me set up GitHub Desktop and create a new repo for my modular website.</code>
+</div>
+
+  <h2 id="server" class="text-2xl font-semibold mb-2">Running a Local Server</h2>
+  <p class="mb-4">
+    <strong>StackPilot Standard:</strong> <code>python3 -m http.server</code> or <code>npx serve</code> to preview changes in a browser.
+  </p>
+  <p class="mb-4">
+    Browsers block JS <code>fetch()</code> from reading local files — so you need to serve the site with HTTP.
+  </p>
+  <p class="mb-4">
+    <strong>Other Options:</strong> Live Server (VSCode extension), Apache, XAMPP
+  </p>
+  <div class="stackpilot-prompt">
+  <button onclick="navigator.clipboard.writeText('How can I preview my HTML site locally with a simple server?');" class="absolute top-2 right-2 text-xs text-yellow-300 hover:text-white border border-yellow-500 px-2 py-1 rounded">
+    Copy
+  </button>
+  <strong class="text-yellow-300">Prompt:</strong>
+  <code class="text-yellow-100">How can I preview my HTML site locally with a simple server?</code>
+</div>
+
+  <h2 id="prompts" class="text-2xl font-semibold mb-2">ChatGPT Setup Prompts</h2>
+  <p class="mb-4">
+    Use these prompts to ask ChatGPT for help making decisions:
+  </p>
+  <div class="stackpilot-prompt">
+  <button onclick="navigator.clipboard.writeText('Help me decide between Tailwind and Bootstrap for my site.');" class="absolute top-2 right-2 text-xs text-yellow-300 hover:text-white border border-yellow-500 px-2 py-1 rounded">
+    Copy
+  </button>
+  <code class="text-yellow-100">Help me decide between Tailwind and Bootstrap for my site.</code>
+</div>
+<div class="stackpilot-prompt">
+  <button onclick="navigator.clipboard.writeText('What are the pros and cons of GitHub Desktop vs command-line Git?');" class="absolute top-2 right-2 text-xs text-yellow-300 hover:text-white border border-yellow-500 px-2 py-1 rounded">
+    Copy
+  </button>
+  <code class="text-yellow-100">What are the pros and cons of GitHub Desktop vs command-line Git?</code>
+</div>
+<div class="stackpilot-prompt">
+  <button onclick="navigator.clipboard.writeText('Can you help me install VSCode and the extensions I need?');" class="absolute top-2 right-2 text-xs text-yellow-300 hover:text-white border border-yellow-500 px-2 py-1 rounded">
+    Copy
+  </button>
+  <code class="text-yellow-100">Can you help me install VSCode and the extensions I need?</code>
+</div>
+<div class="stackpilot-prompt">
+  <button onclick="navigator.clipboard.writeText('What’s the easiest way to publish my site with GitHub Pages?');" class="absolute top-2 right-2 text-xs text-yellow-300 hover:text-white border border-yellow-500 px-2 py-1 rounded">
+    Copy
+  </button>
+  <code class="text-yellow-100">What’s the easiest way to publish my site with GitHub Pages?</code>
+</div>
+
+  <p class="text-sm text-gray-500">
+    Pick the tools that feel right — StackPilot works with all of them.
+  </p>
 </section>
+

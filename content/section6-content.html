@@ -1,0 +1,65 @@
+<h1 class="text-3xl font-bold mb-4">Section 6: Dynamic Navigation</h1>
+
+<section class="mb-6">
+  <p class="mb-4 text-lg italic text-gray-700 dark:text-gray-300">
+    StackPilot's sidebar isn't static — it adapts to your content automatically. Learn how it works, how to customize it, and how to give your users (and ChatGPT) a smoother navigation experience.
+  </p>
+
+  <h2 class="text-2xl font-semibold mb-2">How Navigation Works</h2>
+  <p class="mb-4">
+    The sidebar is rendered dynamically via <code>assets/nav.js</code>. It pulls from a JavaScript array of sections and renders them into the <code>#sidebar-placeholder</code> container in <code>index.html</code>. 
+    To avoid issues during testing, make sure:
+  </p>
+  <ul class="list-disc pl-6 mb-4 text-cyan-300">
+    <li>All file paths are correct and case-sensitive (especially on Linux or GitHub Pages)</li>
+    <li>Your HTML has finished loading before <code>nav.js</code> runs (scripts should be placed at the bottom or wrapped in <code>DOMContentLoaded</code>)</li>
+  </ul>
+
+  <div class="stackpilot-box">
+    <code class="whitespace-pre">
+const navItems = [
+  { id: "index", label: "Welcome" },
+  { id: "section2", label: "Getting Started" },
+  { id: "section3", label: "Folder Structure" },
+  { id: "section4", label: "Styling Options" },
+  { id: "section5", label: "Creating New Sections" },
+  { id: "section6", label: "Dynamic Navigation" },
+];
+    </code>
+  </div>
+
+  <h2 class="text-2xl font-semibold mb-2">Making It Modular</h2>
+  <p class="mb-4">
+    Rather than hardcoding links into every page, the nav system builds itself based on this array. You can add subsections using a <code>children</code> array inside each item. These children are also rendered dynamically — so if they’re misconfigured (e.g., wrong ID or missing hash target), it can break layout or confuse navigation.
+  </p>
+
+  <div class="stackpilot-prompt">
+    <button onclick="navigator.clipboard.writeText('Add a subsection under Getting Started for VS Code setup.');" class="absolute top-2 right-2 text-xs text-yellow-300 hover:text-white border border-yellow-500 px-2 py-1 rounded">Copy</button>
+    <strong class="text-yellow-300">Prompt:</strong>
+    <code class="text-yellow-100">Add a subsection under Getting Started for VS Code setup.</code>
+  </div>
+
+  <h2 class="text-2xl font-semibold mb-2">Sticky & Collapsible</h2>
+  <p class="mb-4">On desktop, the sidebar sticks as you scroll. On mobile, it collapses for more screen space. Nested sections can be toggled open/closed. This behavior is controlled by the included <code>nav.js</code> logic.</p>
+
+  <h2 class="text-2xl font-semibold mb-2">Highlighting the Active Section</h2>
+  <p class="mb-4">When you click a nav link, the corresponding item is highlighted based on the hash in the URL. This is managed by a helper function that checks the current hash and applies styles.</p>
+
+  <div class="stackpilot-box">
+    <code class="whitespace-pre">
+function highlightActiveLink() {
+  const hash = window.location.hash;
+  document.querySelectorAll('[data-subnav]').forEach(link => {
+    link.classList.remove('bg-cyan-800', 'text-white', 'font-semibold');
+    if (link.getAttribute('href') === hash) {
+      link.classList.add('bg-cyan-800', 'text-white', 'font-semibold');
+    }
+  });
+}
+    </code>
+  </div>
+
+  <p class="text-sm text-gray-500">
+    Dynamic navigation lets you scale your site without duplicating menus. It’s fast, flexible, and always in sync with your content.
+  </p>
+</section>

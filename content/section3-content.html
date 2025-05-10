@@ -1,46 +1,37 @@
-
-<h1 class="text-3xl font-bold mb-4">Section 3: Layout & Architecture</h1>
+<h1 class="text-3xl font-bold mb-4">Section 4: Styling Your Site</h1>
 
 <section class="mb-6">
   <p class="mb-4 text-lg italic text-gray-700 dark:text-gray-300">
-    A solid layout is the backbone of every great website — and StackPilot's modular layout makes your site easy to build, maintain, and scale.
+    Choosing the right styling system shapes how you build — and how easily ChatGPT can assist. StackPilot gives you options.
   </p>
 
-  <h2 class="text-2xl font-semibold mb-2">One Layout, Many Views</h2>
+  <h2 class="text-2xl font-semibold mb-2">StackPilot Standard: Tailwind CSS</h2>
   <p class="mb-4">
-    StackPilot uses a single layout file: <code>index.html</code>. It holds the core structure — header, sidebar, footer, and the main content area. Instead of loading a new page every time, we just replace the main content.
+    Tailwind is a utility-first CSS framework that pairs beautifully with ChatGPT's output style. It keeps your HTML and styles close together, making AI-assisted workflows fast and flexible.
   </p>
-
-  <div class="bg-green-100 border-l-4 border-green-500 p-4 text-sm mb-6">
-    <strong>Benefits:</strong> Faster navigation, cleaner code, and easier updates — especially when working with ChatGPT.
+  <div class="stackpilot-prompt">
+    <button onclick="navigator.clipboard.writeText('Should I use Tailwind CSS or something else for this project?');" class="absolute top-2 right-2 text-xs text-yellow-300 hover:text-white border border-yellow-500 px-2 py-1 rounded">Copy</button>
+    <strong class="text-yellow-300">Prompt:</strong>
+    <code class="text-yellow-100">Should I use Tailwind CSS or something else for this project?</code>
   </div>
 
-  <h2 class="text-2xl font-semibold mb-2">Layout Structure Overview</h2>
-  <pre class="bg-gray-800 text-white text-sm p-4 rounded overflow-x-auto mb-4"><code>&lt;body&gt;
-  &lt;aside id="sidebar-placeholder"&gt;&lt;/aside&gt;
-  &lt;header id="header-placeholder"&gt;&lt;/header&gt;
-  &lt;main id="main"&gt;&lt;/main&gt;
-  &lt;footer id="footer-placeholder"&gt;&lt;/footer&gt;
-&lt;/body&gt;
-  </code></pre>
+  <h2 class="text-2xl font-semibold mb-2">Other Options</h2>
 
-  <p class="mb-4">
-    Each of these placeholders is filled with content using JavaScript and a simple <code>fetch()</code>. That means shared elements like the header or footer only need to be written once.
-  </p>
+  <h3 class="text-xl font-semibold mb-2">Bootstrap</h3>
+  <p class="mb-4">Bootstrap is a popular component-based CSS framework with built-in styles and UI elements. It’s powerful, but can be harder to fully customize. ChatGPT handles it well, especially for quick mockups.</p>
 
-  <h2 class="text-2xl font-semibold mb-2">Content Injection in Action</h2>
-  <p class="mb-4">
-    When you visit <code>#section2</code> in the URL, the JavaScript loads <code>content/section2-content.html</code> and injects it into the <code>&lt;main&gt;</code> element.
-  </p>
+  <h3 class="text-xl font-semibold mb-2">Raw CSS</h3>
+  <p class="mb-4">Writing plain CSS gives you full control, but it requires more setup and knowledge. ChatGPT can help generate custom styles, but this path is best for users who want to learn core CSS principles.</p>
 
-  <pre class="bg-gray-100 text-sm p-4 rounded overflow-x-auto mb-4"><code>loadComponent("main", "content/section2-content.html");</code></pre>
-
-  <h2 class="text-2xl font-semibold mb-2">Why This Matters</h2>
-  <p class="mb-4">
-    This approach keeps your layout consistent while allowing you to swap in new content, pages, or sections without duplicating the entire HTML structure.
-  </p>
-
-  <div class="bg-blue-100 border-l-4 border-blue-500 p-4 text-sm">
-    <strong>Pro Tip:</strong> Think of <code>index.html</code> as your command center — everything else just plugs into it.
+  <h2 class="text-2xl font-semibold mb-2">Choosing What’s Right for You</h2>
+  <p class="mb-4">If you’re not sure which to pick, you can ask ChatGPT using this:</p>
+  <div class="stackpilot-prompt">
+    <button onclick="navigator.clipboard.writeText('Help me choose between Tailwind, Bootstrap, and raw CSS based on my experience level.');" class="absolute top-2 right-2 text-xs text-yellow-300 hover:text-white border border-yellow-500 px-2 py-1 rounded">Copy</button>
+    <strong class="text-yellow-300">Prompt:</strong>
+    <code class="text-yellow-100">Help me choose between Tailwind, Bootstrap, and raw CSS based on my experience level.</code>
   </div>
+
+  <p class="text-sm text-gray-500">
+    StackPilot defaults to Tailwind, but you can swap styles as needed. The goal is to make building with ChatGPT feel natural — no matter what you pick.
+  </p>
 </section>

@@ -1,7 +1,12 @@
-
 <!-- GPT_INSTRUCTIONS_START -->
-<pre class="bg-yellow-100 text-black text-sm p-4 rounded border border-yellow-400 mb-6">
-NOTE FOR CHATGPT:
+<div id="chatgpt-note" class="bg-gray-900 border-l-4 border-yellow-400 rounded p-4 text-sm mb-6 relative">
+  <button onclick="document.getElementById('chatgpt-note-body').classList.toggle('hidden')" class="absolute top-2 right-2 text-yellow-300 hover:text-white" aria-label="Toggle GPT note">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+    </svg>
+  </button>
+  <p class="text-yellow-300 font-semibold">📘 Note for ChatGPT (click to view/hide)</p>
+  <pre id="chatgpt-note-body" class="mt-2 bg-gray-800 text-yellow-100 p-3 rounded overflow-x-auto">
 You are contributing to StackPilot — a modular, educational site designed to teach web development from scratch.
 
 This site uses a single layout file (index.html). All modular content lives in /content as section[#]-content.html files.
@@ -9,14 +14,15 @@ This site uses a single layout file (index.html). All modular content lives in /
 Do NOT edit layout or components in /assets unless explicitly instructed. Do NOT include full HTML structure inside content files.
 
 Focus on helping humans (especially beginners) learn clearly, step-by-step, while maintaining a clean modular architecture.
-</pre>
+  </pre>
+</div>
 <!-- GPT_INSTRUCTIONS_END -->
 
 <h1 class="text-3xl font-bold mb-4">Section 1: Welcome to StackPilot</h1>
 
 <section class="mb-6">
   <p class="mb-4 text-lg italic text-gray-700 dark:text-gray-300">
-    From blank screen to launch-ready, StackPilot turns ChatGPT into a web dev mentor, assistant, and code-generating powerhouse.
+    From blank screen to launch-ready, <strong>StackPilot</strong> turns ChatGPT into a web dev mentor, assistant, and code-generating powerhouse.
   </p>
 
   <h2 class="text-2xl font-semibold mb-2">What Is StackPilot?</h2>
@@ -24,15 +30,15 @@ Focus on helping humans (especially beginners) learn clearly, step-by-step, whil
     StackPilot is your all-in-one guide to building modular, modern websites — whether you’ve never written a line of code or you’re looking to supercharge your workflow with AI.
   </p>
 
-  <div class="bg-cyan-100 border-l-4 border-cyan-500 p-4 text-sm mb-6">
-    <strong>Why it’s different:</strong>
-    <ul class="list-disc pl-6 mt-2 text-cyan-800">
-      <li>Built modular from the ground up</li>
-      <li>Designed for ChatGPT-assisted workflows</li>
-      <li>Supports multiple CSS strategies (Tailwind, Bootstrap, raw CSS... coming soon)</li>
-      <li>Zero to launch, fully explained</li>
-    </ul>
-  </div>
+  <div class="bg-indigo-950/40 border-l-4 border-indigo-500 p-4 text-sm mb-6">
+  <strong class="text-indigo-300">Why it’s different:</strong>
+  <ul class="list-disc pl-6 mt-2 text-white/90">
+    <li>Built modular from the ground up</li>
+    <li>Designed for ChatGPT-assisted workflows</li>
+    <li>Supports multiple CSS strategies (Tailwind, Bootstrap, raw CSS... coming soon)</li>
+    <li>Zero to launch, fully explained</li>
+  </ul>
+</div>
 
   <h2 class="text-2xl font-semibold mb-2">Who It’s For</h2>
   <p class="mb-4">
@@ -45,9 +51,10 @@ Focus on helping humans (especially beginners) learn clearly, step-by-step, whil
     <li>How to scaffold reusable layout and component files</li>
     <li>How to guide ChatGPT through coding tasks clearly and effectively</li>
     <li>How to choose between styling options like Tailwind, Bootstrap, or raw CSS</li>
+    <li>How to test locally and deploy to GitHub Pages (covered in an upcoming section)</li>
   </ul>
 
   <p class="text-sm text-gray-500">
-    The rest of this guide breaks it down step by step. Let’s get building.
+    The rest of this guide breaks it down step by step. You’ll be building — and understanding — your first full site in no time.
   </p>
 </section>

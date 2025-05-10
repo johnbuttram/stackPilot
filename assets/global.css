@@ -1,0 +1,45 @@
+.stackpilot-box {
+  background-color: rgba(49, 46, 129, 0.4); /* indigo-950/40 */
+  border-left: 4px solid #6366f1;           /* indigo-500 */
+  color: white;
+  padding: 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow-x: auto;
+}
+.stackpilot-tip {
+  background-color: #1f2937; /* Tailwind gray-800 */
+  border-left: 4px solid #facc15; /* Tailwind yellow-500 */
+  color: #fef9c3; /* Tailwind yellow-100 for text */
+  padding: 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+.stackpilot-prompt {
+  background-color: #1f2937; /* Tailwind gray-800 */
+  border-left: 4px solid #facc15; /* Tailwind yellow-500 */
+  color: #fef9c3; /* Tailwind yellow-100 */
+  padding: 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+.stackpilot-prompt button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.75rem;
+  color: #fde047; /* Tailwind yellow-300 */
+  border: 1px solid #facc15;
+  background: transparent;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+}
+.stackpilot-prompt button:hover {
+  color: white;
+  border-color: white;
+}
