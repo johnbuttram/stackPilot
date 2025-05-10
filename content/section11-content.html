@@ -1,0 +1,83 @@
+<div id="section11">
+  <h2>Section 11: SEO & Metadata Injection</h2>
+  <p>Metadata drives discoverability. In this section, we’ll dynamically inject <code>&lt;title&gt;</code>, meta descriptions, Open Graph tags, and JSON-LD structured data into your pages using JavaScript. You’ll see clear examples for each and ChatGPT prompts to automate snippet generation.</p>
+
+  <div class="stackpilot-tip">
+    <strong>Tip:</strong> Keep your <code>&lt;title&gt;</code> under 60 characters and meta descriptions under 160 characters for optimal SEO results.
+  </div>
+
+  <h3>11.1 Dynamic Document Title</h3>
+  <p>Use JavaScript to set the page title based on your content:</p>
+  <pre class="stackpilot-box"><code>// JS to set the document title
+const pageTitle = "Awesome Guide – Section 11";
+document.title = pageTitle;
+</code></pre>
+  <div class="stackpilot-prompt">
+    <strong>ChatGPT Prompt:</strong> "Write JavaScript to dynamically set <code>document.title</code> based on a section heading variable."
+  </div>
+
+  <h3>11.2 Meta Description & Viewport</h3>
+  <p>Inject a meta description and viewport tag into the <code>&lt;head&gt;</code>:</p>
+  <pre class="stackpilot-box"><code>// JS to inject meta tags
+const description = "Learn how to inject SEO metadata dynamically for better search rankings.";
+const metaDesc = document.createElement("meta");
+metaDesc.name = "description";
+metaDesc.content = description;
+document.head.appendChild(metaDesc);
+
+const viewport = document.createElement("meta");
+viewport.name = "viewport";
+viewport.content = "width=device-width, initial-scale=1.0";
+document.head.appendChild(viewport);
+</code></pre>
+  <div class="stackpilot-prompt">
+    <strong>ChatGPT Prompt:</strong> "Generate JavaScript that injects a meta description and viewport tag into the document head."
+  </div>
+
+  <h3>11.3 Open Graph Tags</h3>
+  <p>Boost social sharing with Open Graph meta tags:</p>
+  <pre class="stackpilot-box"><code>// JS to inject Open Graph tags
+const ogData = {
+  title: "Awesome Guide Section",
+  type: "article",
+  url: window.location.href,
+  image: "https://example.com/og-image.png",
+  description: "A quick overview of SEO metadata injection."
+};
+Object.entries(ogData).forEach(([prop, content]) => {
+  const meta = document.createElement("meta");
+  meta.setAttribute("property", "og:" + prop);
+  meta.content = content;
+  document.head.appendChild(meta);
+});
+</code></pre>
+  <div class="stackpilot-prompt">
+    <strong>ChatGPT Prompt:</strong> "Provide JavaScript to create and append Open Graph meta tags for title, type, url, image, and description."
+  </div>
+
+  <h3>11.4 JSON-LD Structured Data</h3>
+  <p>Include structured data for rich search results:</p>
+  <pre class="stackpilot-box"><code>// JS to inject JSON-LD structured data
+const ldJson = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Section 11: SEO & Metadata Injection",
+  "author": { "@type": "Person", "name": "StackPilot" },
+  "datePublished": "2025-05-09",
+  "description": "Learn to inject structured JSON-LD data dynamically."
+};
+const ldScript = document.createElement("script");
+ldScript.type = "application/ld+json";
+ldScript.textContent = JSON.stringify(ldJson);
+document.head.appendChild(ldScript);
+</code></pre>
+  <div class="stackpilot-prompt">
+    <strong>ChatGPT Prompt:</strong> "Generate code to inject JSON-LD structured data for an article with schema.org context."
+  </div>
+
+  <h3>11.5 Putting It All Together</h3>
+  <p>Call these scripts in your page injection flow to auto-populate SEO metadata for each section or page.</p>
+  <div class="stackpilot-prompt">
+    <strong>ChatGPT Prompt:</strong> "Create a section scaffold that demonstrates dynamic injection of document title, meta descriptions, Open Graph tags, and JSON-LD."  
+  </div>
+</div>
