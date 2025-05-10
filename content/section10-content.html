@@ -1,0 +1,120 @@
+<div id="section10">
+  <h2>Section 10: Form Handling & Validation</h2>
+  <p>Forms are the bridge between user input and your app’s logic. In this section, we’ll inject a signup form and validate it across three styling methods: raw CSS, Tailwind, and Bootstrap. You’ll learn how to handle errors, maintain accessibility, and prompt ChatGPT for each pattern.</p>
+
+  <div class="stackpilot-tip">
+    <strong>Tip:</strong> Always associate <code>&lt;label&gt;</code> elements with form controls and provide inline error messages for clarity.
+  </div>
+
+  <h3>10.1 Building the Form</h3>
+  <p>Inject a basic HTML form with name and email fields and a submit handler:</p>
+  <pre class="stackpilot-box"><code>&lt;form id="signup-form"&gt;
+  &lt;label for="name"&gt;Name&lt;/label&gt;
+  &lt;input type="text" id="name" name="name" required /&gt;
+  &lt;span id="name-error" class="error"&gt;&lt;/span&gt;
+
+  &lt;label for="email"&gt;Email&lt;/label&gt;
+  &lt;input type="email" id="email" name="email" required /&gt;
+  &lt;span id="email-error" class="error"&gt;&lt;/span&gt;
+
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+&lt;script&gt;
+document.getElementById('signup-form').addEventListener('submit', (e) =&gt; {
+  e.preventDefault();
+  // Validation logic here
+});
+&lt;/script&gt;
+</code></pre>
+  <div class="stackpilot-prompt">
+    <strong>ChatGPT Prompt:</strong> "Generate HTML for a signup form with name and email fields, inline error spans, and a stubbed validation handler."
+  </div>
+
+  <h3>10.2 Raw CSS & JavaScript Validation</h3>
+  <p>Use CSS pseudo-classes and JS to show or clear error messages:</p>
+  <pre class="stackpilot-box"><code>&lt;style&gt;
+.error { color: red; font-size: 0.875rem; }
+input:invalid { border-color: red; }
+input:valid { border-color: green; }
+&lt;/style&gt;
+&lt;script&gt;
+const form = document.getElementById('signup-form');
+form.addEventListener('submit', (e) =&gt; {
+  let valid = true;
+  ['name', 'email'].forEach(id =&gt; {
+    const el = document.getElementById(id);
+    const errorEl = document.getElementById(id + '-error');
+    if (!el.checkValidity()) {
+      errorEl.textContent = el.validationMessage;
+      valid = false;
+    } else {
+      errorEl.textContent = '';
+    }
+  });
+  if (valid) console.log('Form is valid!');
+});
+&lt;/script&gt;
+</code></pre>
+  <div class="stackpilot-prompt">
+    <strong>ChatGPT Prompt:</strong> "Write vanilla JS to validate required input fields, set error span text, and prevent submission if invalid."
+  </div>
+
+  <h3>10.3 Tailwind CSS Styling</h3>
+  <p>Style the form and error states using utility classes:</p>
+  <pre class="stackpilot-box"><code>&lt;form id="signup-form" class="max-w-md mx-auto p-4"&gt;
+  &lt;div class="mb-4"&gt;
+    &lt;label for="name" class="block text-sm font-medium text-gray-700"&gt;Name&lt;/label&gt;
+    &lt;input type="text" id="name" name="name" required class="mt-1 block w-full border border-gray-300 rounded p-2 invalid:border-red-500 focus:outline-none focus:ring-2 focus:ring-indigo-500" /&gt;
+    &lt;span id="name-error" class="text-red-600 text-sm"&gt;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="mb-4"&gt;
+    &lt;label for="email" class="block text-sm font-medium text-gray-700"&gt;Email&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required class="mt-1 block w-full border border-gray-300 rounded p-2 invalid:border-red-500 focus:outline-none focus:ring-2 focus:ring-indigo-500" /&gt;
+    &lt;span id="email-error" class="text-red-600 text-sm"&gt;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+  <div class="stackpilot-prompt">
+    <strong>ChatGPT Prompt:</strong> "Generate Tailwind classes for an accessible form with inline validation styling (green border on valid, red on invalid)."
+  </div>
+
+  <h3>10.4 Bootstrap Form & Validation</h3>
+  <p>Use Bootstrap’s built-in validation classes for feedback:</p>
+  <pre class="stackpilot-box"><code>&lt;form id="signup-form" novalidate&gt;
+  &lt;div class="mb-3"&gt;
+    &lt;label for="name" class="form-label"&gt;Name&lt;/label&gt;
+    &lt;input type="text" class="form-control" id="name" required&gt;
+    &lt;div class="invalid-feedback"&gt;Please enter your name.&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="mb-3"&gt;
+    &lt;label for="email" class="form-label"&gt;Email&lt;/label&gt;
+    &lt;input type="email" class="form-control" id="email" required&gt;
+    &lt;div class="invalid-feedback"&gt;Please enter a valid email.&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button type="submit" class="btn btn-primary"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+&lt;script&gt;
+(() =&gt; {
+  'use strict';
+  const form = document.getElementById('signup-form');
+  form.addEventListener('submit', (e) =&gt; {
+    if (!form.checkValidity()) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    form.classList.add('was-validated');
+  });
+})();
+&lt;/script&gt;
+</code></pre>
+  <div class="stackpilot-prompt">
+    <strong>ChatGPT Prompt:</strong> "Provide Bootstrap 5 markup and JS to enable client-side validation with feedback messages."
+  </div>
+
+  <h3>10.5 Putting It All Together</h3>
+  <p>Dynamically inject the form into <code>&lt;main&gt;</code>, choose your styling approach, and ensure accessible validation throughout.</p>
+  <div class="stackpilot-prompt">
+    <strong>ChatGPT Prompt:</strong> "Generate a section scaffold for form handling and validation demonstrating raw CSS, Tailwind, and Bootstrap methods."
+  </div>
+</div>
