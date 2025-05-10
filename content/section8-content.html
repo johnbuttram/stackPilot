@@ -1,0 +1,56 @@
+<div id="section8">
+  <h2>Section 8: Integrating a JavaScript Framework</h2>
+  <p>In this section, we'll demonstrate how to slot in a lightweight JS framework—React (with a note on Vue/Svelte)—into our modular setup. We'll inject framework-specific components into <code>&lt;main&gt;</code> without overhauling the existing navigation or styling.</p>
+  <div class="stackpilot-tip">
+    <strong>Tip:</strong> You don’t need a full SPA setup—just hydrate components where you need interactivity.
+  </div>
+
+  <h3>8.1 Why Integrate a Framework?</h3>
+  <ul>
+    <li>Component-based logic for dynamic UIs</li>
+    <li>Reusable code chunks with state management</li>
+    <li>Seamless pairing: humans write markup, ChatGPT fills boilerplate</li>
+  </ul>
+  <div class="stackpilot-prompt">
+    <strong>ChatGPT Prompt:</strong> "Explain the benefits of adding React to a vanilla HTML/CSS project for small interactive widgets."
+  </div>
+
+  <h3>8.2 React Example</h3>
+  <p>Inject a simple counter component:</p>
+  <pre><code>&lt;div id="react-counter-root"&gt;&lt;/div&gt;
+&lt;script type="text/javascript" src="https://unpkg.com/react@18/umd/react.development.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  function Counter() {
+    const [count, setCount] = React.useState(0);
+    return (
+      React.createElement('div', { className: 'p-4 bg-gray-100' },
+        React.createElement('p', null, `Count: ${count}`),
+        React.createElement('button', { onClick: () => setCount(count + 1), className: 'mt-2 px-3 py-1 bg-blue-500 text-white rounded' }, 'Increment')
+      )
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('react-counter-root')).render(
+    React.createElement(Counter)
+  );
+&lt;/script&gt;
+  </code></pre>
+  <div class="stackpilot-prompt">
+    <strong>ChatGPT Prompt:</strong> "Generate a React component that fetches data from an API and displays it in a list with loading and error states."
+  </div>
+
+  <h3>8.3 Vue/Svelte Notes</h3>
+  <p>If you prefer Vue or Svelte, the pattern is similar:</p>
+  <pre><code><!-- Vue 3 via CDN -->
+&lt;div id="vue-widget"&gt;{{ message }}&lt;/div&gt;
+&lt;script src="https://unpkg.com/vue@3/dist/vue.global.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  Vue.createApp({
+    data() { return { message: 'Hello from Vue!' } }
+  }).mount('#vue-widget')
+&lt;/script&gt;
+  </code></pre>
+  <div class="stackpilot-prompt">
+    <strong>ChatGPT Prompt:</strong> "Write a Vue 3 component that toggles dark mode by updating CSS variables."
+  </div>
+</div>

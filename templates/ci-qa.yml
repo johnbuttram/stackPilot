@@ -1,0 +1,15 @@
+name: Lint Sections
+on: [push, pull_request]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Scan for forbidden classes
+        run: |
+          if grep -R ".stackpilot-box" content/; then
+            echo "⚠️ Forbidden .stackpilot-box wrapper found!";
+            exit 1;
+          else
+            echo "✅ No forbidden wrappers detected.";
+          fi

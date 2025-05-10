@@ -28,6 +28,36 @@ const navItems = [
   {
     id: "section6",
     label: "Dynamic Navigation"
+  },
+  {
+    id: "section7",
+    label: "Responsive Layouts & Breakpoints",
+    children: [
+      { id: "section7#tailwind", label: "Tailwind CSS Utilities" },
+      { id: "section7#raw-css", label: "Raw CSS Media Queries" },
+      { id: "section7#bootstrap", label: "Bootstrap Grid System" }
+    ]
+  },
+  {
+    id: "section8",
+    label: "Integrating a JavaScript Framework",
+    children: [
+      { id: "section8#why-integrate", label: "Why Integrate a Framework" },
+      { id: "section8#react-example", label: "React Example" },
+      { id: "section8#vue-svelte-notes", label: "Vue/Svelte Notes" }
+    ]
+  },
+  {
+    id: "templates",
+    label: "Templates",
+    children: [
+      { id: "templates-page-scaffold", label: "Page Scaffold" },
+      { id: "templates-component-snippet", label: "Component Snippet" },
+      { id: "templates-chatgpt-prompt", label: "ChatGPT Prompt" },
+      { id: "templates-nav-entry", label: "Nav Entry Template" },
+      { id: "templates-ci-qa", label: "CI/QA Workflow" },
+      { id: "templates-contributing", label: "Contributing Guide" }
+    ]
   }
 ];
 
